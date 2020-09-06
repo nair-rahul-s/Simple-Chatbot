@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ruby</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!--#1 CSS Files-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/botui/build/botui.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/botui/build/botui-theme-default.css" />
+    <script type="text/javascript", src="/eel.js"></script>
+  </head>
+  <body>
+    <!--#2 BotUI Tag-->
+    <div class="botui-app-container" id="hello-world">
+      <bot-ui></bot-ui>
+    </div>
+    <!--#3 Javascript Files-->
+    <script src="https://cdn.jsdelivr.net/vue/latest/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/botui/build/botui.js"></script>
+    <script type="text/javascript">
+      //#4 Initialization
+      var botui = new BotUI('hello-world');
+      // var count = -1
+      // var question = ["Hello Hello Hello Hello Hello Hello","Hello Hello Hello Hello Hello Hello","Hello Hello Hello Hello Hello Hello","Hello Hello Hello Hello Hello Hello","Hello Hello Hello Hello Hello Hello","Hello Hello Hello Hello Hello Hello","Hello Hello Hello Hello Hello Hello"]
+      // var answer = ["Hello Hello Hello Hello Hello Hello","Hello Hello Hello Hello Hello Hello","Hello Hello Hello Hello Hello Hello","Hello Hello Hello Hello Hello Hello","Hello Hello Hello Hello Hello Hello","Hello Hello Hello Hello Hello Hello","Hello Hello Hello Hello Hello Hello"]
+
+      var recievedText = 'I am Ruby, Digital Assistant of TSEC\n How may I help you ?';
+      var recievedStatus = "true";
+      var listOfOptions = [];
+      var listOfResponses = [];
+      // var sendtext;
+
+
+      function setValue(text, status, options, responses){
+        if(options.length > 0){
+          for(i=0; i<options.length; i++){
+            var x = {value : i.toString(), text: options[i]};
+            listOfOptions.push(x);
+            listOfResponses.push(responses[i])
+          }
+        }
+        recievedText = text;
+        recievedStatus = status;
+        console.log("recievedStatus : " + recievedStatus);
+        console.log("recievedText : " + recievedText);
+        console.log(options);
+        console.log(responses);
+      }
+      eel.expose(setValue);
+
+      function human(){
+        // recievedStatus = "false";
+
+        return botui.action.text({
+          action: {
+            placeholder: 'Ask a question'
+          }
+        }).then(function (res){
+          eel.response(res.value);
+        });
+      }
+
+      function bot(){
+        // recievedStatus = "false";
+        return botui.message.add({
+            delay: 1000,
+            loading : true,
+            human: false,
+            content: recievedText
+          })
+      }
+
+      function botOptions(){
+        // recievedStatus = "false";
+        return botui.action.select({
+          action: {
+            placeholder : "Select Options", 
+            value: listOfOptions[0]['value'], // Selected value or selected object. Example: {value: "TR", text : "Türkçe" }
+            searchselect : false, // Default: true, false for standart dropdown
+            label : listOfOptions[0]['text'], // dropdown label variable
+            options : listOfOptions,
+              button: {
+              // icon: 'check',
+              label: 'OK'
+            }
+          }
+        }).then(function (res) { // will be called when a button is clicked.
+            var i = parseInt(res.value);
+            console.log(res.value);
+            recievedText = listOfResponses[i];
+            listOfOptions.length = 0;
+            listOfResponses.length = 0;
+            promise = promise.then(bot).then(human) // will print "one" from 'value'
+        });
+      }
+
+      var promise = botui.message.add({
+              delay: 1000,
+              loading: true,
+              human: false,
+              content: "Hey there"
+      });
+
+      window.setInterval(function (){
+        if(recievedStatus == "true"){
+          recievedStatus = "false";
+          if(listOfOptions.length>0){
+            promise = promise.then(bot).then(botOptions)
+          }else{
+            promise = promise.then(bot).then(human)
+          }
+        }
+      },1000);
+
+          
+
+
+
+      // botui.message.add({
+      //   human: false,
+      //   content: 'Hello World from bot!'
+      // }).then(function resolver(){
+      //   if(count < question.length + 1){
+      //     count = count + 1
+      //     botMessage1(count,true).then(botMessage1(count,false)).then(resolver)
+      //   }
+      // });
+      
+    </script>
+  </body>
+</html>

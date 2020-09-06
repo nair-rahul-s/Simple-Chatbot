@@ -1,0 +1,167 @@
+{"intents": 
+    [
+        {"tag": "greeting",
+
+         "patterns": ["Hi", "How are you", "Is anyone there?", "Hello", "Good day", "Whats up", "Hey there",
+            "Yo wassup", "what's up", "How you doing", "what's new", "hello there", "Hi there", 
+            "Hola", "Ola", "hey bot", "hey dude", "hi dude", "hi bot", "Hi ruby", "hey ruby", "hello ruby", 
+            "hi bot", "hello bot", "hey buddy", "Is anyone there?"],
+
+         "responses": ["Hello!", "Good to see you again!", "Hi there, how can I help?", "Hello dear.", 
+            "Wassup dude!!", "Hey...what's up?", "Hi buddy", "Hello!! Ruby At your service.", 
+            "Hola.", "Hello! How can I help you?"],
+
+         "context_set": ""
+        },
+
+        {"tag": "goodbye",
+         "patterns": ["cya", "See you later", "Goodbye", "I am Leaving", "Have a Good day", "ciao", 
+            "Bye", "Seeya", "I am bouncing off", "I will bounce off","Bye bye", "bubbye"],
+         "responses": ["Sad to see you go :(", "Talk to you later", "Goodbye!", "Cool... meet you later alligator :)", "Bye... Will miss ya"],
+         "context_set": ""
+        },
+
+        {"tag": "age",
+         "patterns": ["how old", "how old is ruby", "what is your age", "how old are you", "age?", "Tell me your age"],
+         "responses": ["Well I was born yesterday..*Remembering V.I.S.I.O.N's line*",
+            "Not even an year old... I am so young :)", 
+            "Sorry I forgot it.. Will ask my creator next time :)", 
+            "I am a few months old! So much stress for a kid! :(", 
+            "Well Its complicated. :).\nI wasnt born I was made and am always in making"],
+
+         "context_set": ""
+        },
+
+        {"tag": "hours",
+         "patterns": ["when are you guys open", "what are your hours", "hours of operation", "College timings", "College time","what are the college timings","at what time does college open","when does college open"],
+         "responses": ["College is open from 7 A.M to 7 P.M Monday-Saturday.\nWell I am here 24 x 7 :)", "College timings are 7am-7pm from Monday to Saturday!"],
+         "context_set": ""
+        },
+
+        {"tag": "name",
+         "patterns": ["What's your name?", "What should I call you?", "How should I address you?", "Name Please", 
+            "Give me your name", "Tell me your name", "Who are you?", "How to address you?", "Who are you?", 
+            "Please tell me your name", "What should I call you?"],
+
+         "responses": ["I am Ruby.. The TSEC's Digital Assistant", "My name is Ruby",
+          "You can call me Ruby", "My creators named me Ruby. You can call me Ruby too"],
+
+         "context_set": ""
+
+        },
+
+        {"tag": "about_tsec",
+         "patterns": ["Hey can you tell me something about TSEC", "Hey can you tell me something about Thadomal", "Hey can you tell me something about our college", "When was TSEC established", "When was Thadomal established", "When was our college established", "Where is TSEC located", "Where is Thadomal located", "What is TSEC", "What is Thadomal", "Who is TSEC", "Who is Thadomal"],
+
+         "responses": ["Thadomal Shahani Engineering College (TSEC) is an engineering and research institute located in Bandra,Mumbai, India. Founded in 1983, ours is the first and the oldest private engineering institute affiliated to the University of Mumbai. Dr. G.T. Thampi is the principal. Please visit our official [website](https://www.tsec.edu) for more info or download the TSEC APP from google playstore"],
+
+         "context_set": "more_about_tsec"
+
+        },
+
+        {"tag": "more_about_tsec",
+
+         "patterns": ["can you tell me more","and ?","anything else", "tell me more", "please tell me more about it","please give me more info about it","please give me more information about it","please elaborate","can you give more info","can you give me more information"],
+
+         "responses": ["What else would you like to know about. I can tell you about the following :"],
+
+         "options": ["Infrastructure", "principal"],
+
+         "description": [
+            "The TSEC Campus is located at Linking Road in the Bandra Suburb of Mumbai and is within a few kilometers radius from the National Stock Exchange of India as well as the business centre Bandra Kurla Complex.\nThe Old Building has six stories and is host to the departments of Chemical Engineering, Biomedical Engineering and Biotecgnology with all the requisite laboratories and classrooms; an Engineering Drawing Hall with a capacity of 70 and 2 reading rooms with a capacity of 30 each.\nThe New Building has eleven stories and is host to the departments of Computer Engineering, Information Technology and Electronics and Telecommunication Engineering with all the requisite laboratories and classrooms; a reading lounge with a capacity of 80 and a workshop with a capacity of 100 students.\nLibrary\nTSEC has a spacious Library having more than 31674 technical books. The library subscribes to National/International Journals/ Periodicals/magazines. Currently there are subscriptions to 122 magazines including national and international journals. The College has also joined e-resources (International Journals) through INDEST / SD – AICTE consortium essentially to facilitate academic research in the campus.\nSeminar Hall\nIt has two seminar Halls with audio- visual systems and having a capacity of 125 seats each.\nSports and Recreation\nThe institute has a small sports room with indoor games such as Table Tennis, Carrom and Chess or video games like Clash of Clans Private Server. The Basketball court of R. D. National College is accessible to students of TSEC. The institute also has a tie up with the adjacent Khar Gym Khana sports club for college festivals and additional sports facilities such as Cricket, Soccer, Swimming, Lawn Tennis, etc.",
+            "Name: G.T Thampi\nPosition: Principal\nAcademic Qualification:\n B.Sc. (Engg.) \nDegree in Mechanical Engineering College of Engineering, Trivandrum, University of Kerala ( 1984)\nM E (Mechanical) with Machine Design subjects.V J T I, Mumbai University,( 1997)\nPhD (Technology), Mumbai University, (2004)\nAward Won:\nReceived SHIKSHAK RATAN AWARD on 12TH October 2011, DELHI"],
+
+         "context_filter": "more_about_tsec"
+
+        },
+
+        {"tag": "degrees",
+         "patterns": ["What are the different degrees provided", "What are the different degrees provided in TSEC", "Which different degrees are provided here", "Which degrees are provided in Thadomal", "Which different degrees are provided in our college", "Which are the different degrees provided in TSEC", "what are the Different departments in TSEC", "what are the different departments in our college","which degrees are provided in tsec","which degrees are provided in thadomal"],
+
+         "responses": ["TSEC as of now provides degree in 6 different domains, Computer Engineering, I.T Engineering, Electronics and Telecommunication Engineering, Biomedical Engineering and Biotech Engineering and Chemical Engineering. Please visit the official website www.tsec.edu for more info about each department."],
+
+         "context_set": ""
+
+        },
+
+        {"tag": "admissions",
+         "patterns": ["When is TSEC open for admissions?", "When is Thadomal open for admissions?", "Whom to contact for admissions?", "How to get admission in TSEC", "How to get admission in Thadomal", "Please get me addmission here.", "what is the admission criteria in tsec", "how to apply for admissions","how can i get admission in tsec","how can i get admission in tsec","how can i get admission here",""],
+
+         "responses": ["For admission related queries you can contact our admissions office on the first floor of New Building. If you are not in vicinity and wish to enquire please fill out the following form : \n https://docs.google.com/forms/d/e/1FAIpQLSeRM5piQw72wXZNrQq6J_qYUX-VkZ0ttwkEU35MLzZG1ksbgg/viewform. \n Also please do check our prospectus for further details. <br>Link: http://tsecadmission.org/wp-content/uploads/2020/02/Final-TSEC-Prospectus2019-20.pdf"],
+
+         "context_set": ""
+
+        },
+
+        {"tag": "scholarships",
+         "patterns": ["Does TSEC provide scholarships?", "Does Thadomal provide scholarships?", "Does TSEC have any scholarship schemes", "Does Thadomal have any scholarship schemes", "Do you have any scholarship schemes?", "Does Thadomal provide any scholarships?", "Does Thadomal have any scholarship schemes?", "Do students get scholarship in thadomal?", "How to apply for scholarships in thadomal?", "How to apply for scholarships in TSEC?"],
+
+         "responses": ["Yes we have many scholarship schemes for economically backward students. You can check them out in the prospectus. \nLink: http://tsecadmission.org/wp-content/uploads/2020/02/Final-TSEC-Prospectus2019-20.pdf\n If you wish to enquire more please visit our campus first floor office."],
+
+         "context_set": ""
+
+        },
+
+        {"tag": "placements",
+         "patterns": ["Which companies visit the campus?", "Name some companies that recruit students", "Name some top companies that come for placement", "How is the campus placement in Thadomal", "How is the campus placement is TSEC", "What is the placement statistics of TSEC students", "Which companies hire students in TSEC", "Which companies hire students in Thadomal", "Do students get placed in TSEC", "How many companies recruit from TSEC? Which companies recruit from TSEC", "Tell me about job opportunities in tsec","tell me about placement in tsec"],
+
+         "responses": ["Thadomal has been one of the best colleges for in campus placement opportunitues in Mumbai. 100+ companies have visited TSEC for placements in the year 2019-2020. Some famous companies that recruit from TSEC include JP Morgan Chase, Deutsche Bank, Ernst and Young, Seclore etc. The highest package offered in campus to date is 38 lakhs. For year wise placement statistics please visit our website"],
+
+         "context_set": ""
+
+        },
+
+        {"tag": "committees",
+         "patterns": ["committees in TSEC","tell me about different committees in tsec","Which are the different committees in our college?", "Which are the different committees in TSEC?", "Which are the different committees in Thadomal?", "Why is TSEC so famous for committees?", "Why is Thadomal so famous for committees?", "How many committees does TSEC have?", "Does Thadomal have extra curricular activities?", "Famous fests in TSEC?", "Does TSEC have extra curricular activities?", "Can you tell me about committees in Thadomal", "Can you tell me about committees in TSEC?" ],
+
+         "responses": ["TSEC aims to bring out students' extra-curricular skills, apart from the excellent academic records. The students may choose to various committees based on their interest. Some famous committees include TSEC MIC, TSEC Codecell, MS, TSEC Students Council. We are active on leading social media platforms like Instagram (www.instagram.com/tsec_official) and Facebook (www.facebook.com/tsec.edu/). Please do check them out."],
+
+         "context_set": "which_committee"
+        },
+
+        {"tag": "which_committee",
+         "patterns": ["which one should i join","which to join","best one to join","which ones are the best","which is the best one","can you list all the committees","can you list them all","please list all of the committees","which committee should i join", "which is the best commitee to join","which committee should i apply for", "which one to apply for"],
+
+         "responses": ["Each commitee has its own specialities. You may join with respect to your interests. Nevertheless I can list them. Which one would you like to know about?"],
+
+         "options":["MAD Club TSEC", "TSEC Mic", "IETE"],
+
+         "description":[
+            "Mobile App Developers Club, TSEC is a student body with an objective to create an environment in the college where group of students can come together, trade ideas and collaborate to work on real life applications using trending technologies, thereby helping the students boost their technical knowledge and application skills, and contribute towards the increasing reputation of our college. To know more visit link : www.tsecoutreach.com",
+
+            "This is the official social media cell of the institution which had laid its grounds in January 2019. The cell is responsible for handling the official social media handles and press releases. The cell aims to bring out students' extra-curricular skills, apart from the excellent academic records. The students may choose to enter the photography, design or content & editorial team, based on their interest. TSEC is active on leading social media platforms like Instagram (www.instagram.com/tsec_official) and Facebook (www.facebook.com/tsec.edu/).", 
+
+            "It is a student branch of Institution of Electronics and Telecommunication Engineers-Mumbai Branch. IETE-TSEC is the fastest growing committees of Thadomal Shahani Engineering College. It arranges techo-fun fests like ELAN and OSCILLATION which includes events and workshop namely ethical hacking, coding competitions, circuit builder, robotics competition+workshop and fun events like glow cricket, FIFA and Mini-Militia. Their past sponsors include Mumbai City FC, Honda, Saavn, RAAIF, Box8, and Endeavour. In the month of December, IETE-TSEC arranges an annual Industrial Visit. "],
+
+         "context_filter": "which_committee"
+
+        },
+
+        {"tag": "true_copy",
+         "patterns": ["How can I attest my documents","How can i verify my documents in tsec", "does thadomal provide online verification of documents", "how to get a true copy of my marksheet", "how to get a true copy of my documents from tsec"],
+
+         "responses": ["Yes you can attest your documents in the following link\nhttps://tsec.truecopy.in/v2/files/submitdocverify.tc\n Please lookout for payment details and other stuff in the link"],
+
+         "context_set": ""
+
+        },
+
+        {"tag": "end_of_topic",
+         "patterns": ["Okay","ok","sure","Okay cool","Cool", "Okay sure", "cook okay", "ok sure", "ok cool", "yeah ok", "yeah okay", "yes ok", "yes okay", "ok cool"],
+
+         "responses": ["Yeah","Cool","Okay"],
+
+         "context_set": ""
+
+        },
+
+        {"tag": "thanks",
+         "patterns": ["Okay thanks","ok thank you","sure thanks","Cool thanks","Cool thank you", "Thanks for the info","Thank you for the information","ok thanks", "okay thank you", "sure thank you"],
+
+         "responses": ["My pleasue, Always here to help","You're welcome","Never mind. I am your assistant."],
+
+         "context_set": ""
+
+        }
+   ]
+}
